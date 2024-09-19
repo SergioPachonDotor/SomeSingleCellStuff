@@ -22,18 +22,18 @@ This pipeline relies on several tools and packages that need to be installed usi
 
 2. **Create and activate a conda environment**:
    ```bash
-   conda create -n genomics-pipeline python=3.10 -y
-   conda activate genomics-pipeline
+   $ conda create -n genomics-pipeline python=3.10 -y
+   $ conda activate genomics-pipeline
    ```
 
 3. **Install dependencies using conda**:
    ```bash
-   conda install -c bioconda snakemake star samtools umi-tools
+   $ conda install -c bioconda snakemake star samtools umi-tools
    ```
 
 4. **Install additional Python packages** (if required by the simulation scripts):
    ```bash
-   pip install -r requirements.txt
+   $ pip install -r requirements.txt
    ```
 
 ## Usage
@@ -42,18 +42,18 @@ This pipeline relies on several tools and packages that need to be installed usi
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository_url>
-   cd <repository_directory>
+   $ git clone git@github.com:SergioPachonDotor/ SomeSingleCellStuff.git
+   $ cd SomeSingleCellStuff
    ```
 
 2. **Activate the conda environment**:
    ```bash
-   conda activate genomics-pipeline
+   $ conda activate genomics-pipeline
    ```
 
 3. **Run the Snakemake pipeline**:
    ```bash
-   snakemake --cores 8
+   $ snakemake --cores 8
    ```
 
    Adjust the `--cores` parameter based on your system's available resources.
