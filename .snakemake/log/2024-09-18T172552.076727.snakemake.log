@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count    min threads    max threads
+-------------  -------  -------------  -------------
+simulate_data        1              1              1
+total                1              1              1
+
+Select jobs to execute...
+
+[Wed Sep 18 17:25:52 2024]
+rule simulate_data:
+    input: reference_genome, samples, output
+    output: reference_genome/simulated_genome.fa, reference_genome/simulated_genes.gtf
+    jobid: 0
+    resources: tmpdir=/tmp
+
+[Wed Sep 18 17:26:59 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /home/sergio/desktop/loka/.snakemake/log/2024-09-18T172552.076727.snakemake.log

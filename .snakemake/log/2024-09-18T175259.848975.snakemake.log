@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count    min threads    max threads
+----------  -------  -------------  -------------
+STAR_align        1              1              1
+total             1              1              1
+
+Select jobs to execute...
+
+[Wed Sep 18 17:53:00 2024]
+rule STAR_align:
+    input: reference_genome, samples/tissue1/sample_test_1_tissue1_L001_R1_001.fastq.gz, samples/tissue1/sample_test_1_tissue1_L001_R2_001.fastq.gz, samples/tissue1/whitelist_sample_test_1_tissue1.txt
+    output: output/first_analysis/tissue1/STAR_output_Aligned.sortedByCoord.out.bam
+    jobid: 0
+    resources: tmpdir=/tmp
+
+[Wed Sep 18 17:55:31 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /home/sergio/desktop/loka/.snakemake/log/2024-09-18T175259.848975.snakemake.log

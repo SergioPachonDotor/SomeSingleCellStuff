@@ -1,0 +1,21 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count    min threads    max threads
+-------------  -------  -------------  -------------
+simulate_data        1              1              1
+total                1              1              1
+
+Select jobs to execute...
+
+[Wed Sep 18 18:16:18 2024]
+rule simulate_data:
+    input: reference_genome, samples, output
+    output: reference_genome/simulated_genome.fa, reference_genome/simulated_genes.gtf
+    jobid: 0
+    resources: tmpdir=/tmp
+
+RuleException in line 5 of /home/sergio/desktop/loka/snakefile:
+IndexError: list index out of range

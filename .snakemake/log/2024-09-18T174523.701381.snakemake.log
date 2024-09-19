@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in line 37 of /home/sergio/desktop/loka/snakefile:
+Missing input files for rule STAR_align:
+output/first_analysis/tissue2/STAR_output_
+output/first_analysis/tissue1/STAR_output_
+output/first_analysis/tissue3/STAR_output_

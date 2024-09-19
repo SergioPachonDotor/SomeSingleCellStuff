@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in line 5 of /home/sergio/desktop/loka/snakefile:
+Missing input files for rule simulate_data:
+3
+5000000

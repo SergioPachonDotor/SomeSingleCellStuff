@@ -1,0 +1,30 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count    min threads    max threads
+----------  -------  -------------  -------------
+STAR_align        1              1              1
+total             1              1              1
+
+Select jobs to execute...
+
+[Wed Sep 18 17:48:12 2024]
+rule STAR_align:
+    input: reference_genome, samples/tissue1/sample_test_1_tissue1_L001_R1_001.fastq.gz, samples/tissue3/sample_test_1_tissue3_L001_R1_001.fastq.gz, samples/tissue2/sample_test_1_tissue2_L001_R1_001.fastq.gz, samples/tissue1/sample_test_1_tissue1_L001_R2_001.fastq.gz, samples/tissue3/sample_test_1_tissue3_L001_R2_001.fastq.gz, samples/tissue2/sample_test_1_tissue2_L001_R2_001.fastq.gz, samples/tissue1/whitelist_sample_test_1_tissue1.txt, samples/tissue3/whitelist_sample_test_1_tissue3.txt, samples/tissue2/whitelist_sample_test_1_tissue2.txt
+    output: output/first_analysis/tissue1/STAR_output_Aligned.sortedByCoord.out.bam, output/first_analysis/tissue3/STAR_output_Aligned.sortedByCoord.out.bam, output/first_analysis/tissue2/STAR_output_Aligned.sortedByCoord.out.bam
+    jobid: 0
+    resources: tmpdir=/tmp
+
+[Wed Sep 18 17:48:12 2024]
+Error in rule STAR_align:
+    jobid: 0
+    output: output/first_analysis/tissue1/STAR_output_Aligned.sortedByCoord.out.bam, output/first_analysis/tissue3/STAR_output_Aligned.sortedByCoord.out.bam, output/first_analysis/tissue2/STAR_output_Aligned.sortedByCoord.out.bam
+    shell:
+        STAR --genomeDir reference_genome --readFilesIn samples/tissue1/sample_test_1_tissue1_L001_R1_001.fastq.gz samples/tissue3/sample_test_1_tissue3_L001_R1_001.fastq.gz samples/tissue2/sample_test_1_tissue2_L001_R1_001.fastq.gz samples/tissue1/sample_test_1_tissue1_L001_R2_001.fastq.gz samples/tissue3/sample_test_1_tissue3_L001_R2_001.fastq.gz samples/tissue2/sample_test_1_tissue2_L001_R2_001.fastq.gz --readFilesCommand zcat --outFileNamePrefix output/first_analysis/STAR_output_ --runThreadN 8 --soloType Droplet --soloCBwhitelist samples/tissue1/whitelist_sample_test_1_tissue1.txt samples/tissue3/whitelist_sample_test_1_tissue3.txt samples/tissue2/whitelist_sample_test_1_tissue2.txt --soloCBlen 10 --soloUMIlen 8 --outSAMtype BAM SortedByCoordinate --outSAMattributes NH HI AS nM CR UR --soloFeatures Gene 
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/sergio/desktop/loka/.snakemake/log/2024-09-18T174812.108539.snakemake.log

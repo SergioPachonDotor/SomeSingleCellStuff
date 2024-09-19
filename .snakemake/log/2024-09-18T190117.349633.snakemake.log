@@ -1,0 +1,28 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count    min threads    max threads
+------------------  -------  -------------  -------------
+all                       1              1              1
+create_output_dirs        1              1              1
+total                     2              1              1
+
+Select jobs to execute...
+
+[Wed Sep 18 19:01:17 2024]
+rule create_output_dirs:
+    input: reference_genome/simulated_genome.fa, reference_genome/simulated_genes.gtf
+    output: output/first_analysis/tissue1, output/first_analysis/tissue3, output/first_analysis/tissue2, output/second_analysis/tissue1, output/second_analysis/tissue3, output/second_analysis/tissue2
+    jobid: 1
+    resources: tmpdir=/tmp
+
+ImproperOutputException in line 29 of /home/sergio/desktop/loka/snakefile:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule create_output_dirs:
+output/first_analysis/tissue1
+Removing output files of failed job create_output_dirs since they might be corrupted:
+output/first_analysis/tissue1, output/first_analysis/tissue3, output/first_analysis/tissue2, output/second_analysis/tissue1, output/second_analysis/tissue3, output/second_analysis/tissue2
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/sergio/desktop/loka/.snakemake/log/2024-09-18T190117.349633.snakemake.log

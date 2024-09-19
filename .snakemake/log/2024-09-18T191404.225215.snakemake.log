@@ -1,0 +1,152 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count    min threads    max threads
+-------------  -------  -------------  -------------
+align_reads          3              1              1
+all                  1              1              1
+deduplication        3              1              1
+filter_bam           3              1              1
+genome_index         1              1              1
+total               11              1              1
+
+Select jobs to execute...
+
+[Wed Sep 18 19:14:04 2024]
+rule genome_index:
+    output: reference_genome/Genome
+    jobid: 4
+    resources: tmpdir=/tmp
+
+[Wed Sep 18 19:14:05 2024]
+Finished job 4.
+1 of 11 steps (9%) done
+Select jobs to execute...
+
+[Wed Sep 18 19:14:05 2024]
+rule align_reads:
+    input: reference_genome/Genome, samples/tissue1/sample_test_1_tissue1_L001_R1_001.fastq.gz, samples/tissue1/sample_test_1_tissue1_L001_R2_001.fastq.gz, samples/tissue1/whitelist_sample_test_1_tissue1.txt
+    output: output/first_analysis/tissue1/STAR_output_Aligned.sortedByCoord.out.bam
+    jobid: 3
+    wildcards: sample=tissue1
+    resources: tmpdir=/tmp
+
+
+[Wed Sep 18 19:14:05 2024]
+rule align_reads:
+    input: reference_genome/Genome, samples/tissue2/sample_test_1_tissue2_L001_R1_001.fastq.gz, samples/tissue2/sample_test_1_tissue2_L001_R2_001.fastq.gz, samples/tissue2/whitelist_sample_test_1_tissue2.txt
+    output: output/first_analysis/tissue2/STAR_output_Aligned.sortedByCoord.out.bam
+    jobid: 8
+    wildcards: sample=tissue2
+    resources: tmpdir=/tmp
+
+
+[Wed Sep 18 19:14:05 2024]
+rule align_reads:
+    input: reference_genome/Genome, samples/tissue3/sample_test_1_tissue3_L001_R1_001.fastq.gz, samples/tissue3/sample_test_1_tissue3_L001_R2_001.fastq.gz, samples/tissue3/whitelist_sample_test_1_tissue3.txt
+    output: output/first_analysis/tissue3/STAR_output_Aligned.sortedByCoord.out.bam
+    jobid: 11
+    wildcards: sample=tissue3
+    resources: tmpdir=/tmp
+
+[Wed Sep 18 19:14:21 2024]
+Finished job 8.
+2 of 11 steps (18%) done
+Select jobs to execute...
+
+[Wed Sep 18 19:14:21 2024]
+rule filter_bam:
+    input: output/first_analysis/tissue2/STAR_output_Aligned.sortedByCoord.out.bam
+    output: output/first_analysis/tissue2/filtered.bam
+    jobid: 7
+    wildcards: sample=tissue2
+    resources: tmpdir=/tmp
+
+[Wed Sep 18 19:14:21 2024]
+Finished job 11.
+3 of 11 steps (27%) done
+Select jobs to execute...
+
+[Wed Sep 18 19:14:21 2024]
+rule filter_bam:
+    input: output/first_analysis/tissue3/STAR_output_Aligned.sortedByCoord.out.bam
+    output: output/first_analysis/tissue3/filtered.bam
+    jobid: 10
+    wildcards: sample=tissue3
+    resources: tmpdir=/tmp
+
+[Wed Sep 18 19:14:22 2024]
+Finished job 3.
+4 of 11 steps (36%) done
+Select jobs to execute...
+
+[Wed Sep 18 19:14:22 2024]
+rule filter_bam:
+    input: output/first_analysis/tissue1/STAR_output_Aligned.sortedByCoord.out.bam
+    output: output/first_analysis/tissue1/filtered.bam
+    jobid: 2
+    wildcards: sample=tissue1
+    resources: tmpdir=/tmp
+
+[Wed Sep 18 19:14:24 2024]
+Finished job 7.
+5 of 11 steps (45%) done
+Select jobs to execute...
+
+[Wed Sep 18 19:14:24 2024]
+rule deduplication:
+    input: output/first_analysis/tissue2/filtered.bam
+    output: output/second_analysis/tissue2/deduplicated.bam
+    jobid: 6
+    wildcards: sample=tissue2
+    resources: tmpdir=/tmp
+
+[Wed Sep 18 19:14:24 2024]
+Finished job 10.
+6 of 11 steps (55%) done
+Select jobs to execute...
+
+[Wed Sep 18 19:14:24 2024]
+rule deduplication:
+    input: output/first_analysis/tissue3/filtered.bam
+    output: output/second_analysis/tissue3/deduplicated.bam
+    jobid: 9
+    wildcards: sample=tissue3
+    resources: tmpdir=/tmp
+
+[Wed Sep 18 19:14:24 2024]
+Finished job 2.
+7 of 11 steps (64%) done
+Select jobs to execute...
+
+[Wed Sep 18 19:14:24 2024]
+rule deduplication:
+    input: output/first_analysis/tissue1/filtered.bam
+    output: output/second_analysis/tissue1/deduplicated.bam
+    jobid: 1
+    wildcards: sample=tissue1
+    resources: tmpdir=/tmp
+
+[Wed Sep 18 19:15:11 2024]
+Finished job 9.
+8 of 11 steps (73%) done
+[Wed Sep 18 19:15:11 2024]
+Finished job 1.
+9 of 11 steps (82%) done
+[Wed Sep 18 19:15:12 2024]
+Finished job 6.
+10 of 11 steps (91%) done
+Select jobs to execute...
+
+[Wed Sep 18 19:15:12 2024]
+localrule all:
+    input: output/second_analysis/tissue1/deduplicated.bam, output/second_analysis/tissue2/deduplicated.bam, output/second_analysis/tissue3/deduplicated.bam
+    jobid: 0
+    resources: tmpdir=/tmp
+
+[Wed Sep 18 19:15:12 2024]
+Finished job 0.
+11 of 11 steps (100%) done
+Complete log: /home/sergio/desktop/loka/.snakemake/log/2024-09-18T191404.225215.snakemake.log

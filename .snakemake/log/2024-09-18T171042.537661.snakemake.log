@@ -1,0 +1,22 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count    min threads    max threads
+------------------  -------  -------------  -------------
+create_output_dirs        1              1              1
+total                     1              1              1
+
+Select jobs to execute...
+
+[Wed Sep 18 17:10:42 2024]
+rule create_output_dirs:
+    input: samples
+    jobid: 0
+    resources: tmpdir=/tmp
+
+[Wed Sep 18 17:10:42 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /home/sergio/desktop/loka/.snakemake/log/2024-09-18T171042.537661.snakemake.log

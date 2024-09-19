@@ -1,0 +1,16 @@
+                                        Barcodes:
+                                       nNinBarcode         500000
+                                   nUMIhomopolymer              0
+                                          nTooMany              0
+                                          nNoMatch              0
+                                              Gene:
+                                         nUnmapped              0
+                                        nNoFeature              0
+                                     nAmbigFeature              0
+                             nAmbigFeatureMultimap              0
+                                          nTooMany              0
+                                     nNoExactMatch              0
+                                       nExactMatch              0
+                                            nMatch              0
+                                     nCellBarcodes              0
+                                             nUMIs              0

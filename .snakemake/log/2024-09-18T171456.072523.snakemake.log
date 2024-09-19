@@ -1,0 +1,3 @@
+WildcardError in line 46 of /home/sergio/desktop/loka/snakefile:
+No values given for wildcard 'input'.
+  File "/home/sergio/desktop/loka/snakefile", line 46, in <module>

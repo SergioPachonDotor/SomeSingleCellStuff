@@ -1,0 +1,4 @@
+ValueError in line 14 of /home/sergio/desktop/loka/snakefile:
+Encountered duplicate field name: 'tissue'
+  File "/home/sergio/desktop/loka/snakefile", line 14, in <module>
+  File "/home/sergio/miniconda3/envs/loka/lib/python3.6/collections/__init__.py", line 411, in namedtuple

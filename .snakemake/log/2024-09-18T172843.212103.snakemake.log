@@ -1,0 +1,6 @@
+AttributeError in line 51 of /home/sergio/desktop/loka/snakefile:
+'builtin_function_or_method' object has no attribute 'genome_dir'
+  File "/home/sergio/desktop/loka/snakefile", line 51, in <module>
+  File "/home/sergio/miniconda3/envs/loka/lib/python3.6/string.py", line 194, in vformat
+  File "/home/sergio/miniconda3/envs/loka/lib/python3.6/string.py", line 234, in _vformat
+  File "/home/sergio/miniconda3/envs/loka/lib/python3.6/string.py", line 305, in get_field

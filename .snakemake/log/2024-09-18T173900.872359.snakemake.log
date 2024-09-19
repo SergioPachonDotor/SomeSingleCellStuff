@@ -1,0 +1,3 @@
+NameError in line 40 of /home/sergio/desktop/loka/snakefile:
+name 'SAMPLES' is not defined
+  File "/home/sergio/desktop/loka/snakefile", line 40, in <module>
